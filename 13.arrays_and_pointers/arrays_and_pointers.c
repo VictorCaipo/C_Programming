@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+/*
+making:
+    char word[10];
+    char *cptr;
+    cptr = word;
+we are able to do that because word is a direction to the first character of the array
+*/
+
 const int max_string = 20;
 
 int string_leng(char string[]);
