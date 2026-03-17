@@ -8,7 +8,6 @@ struct flightType{//para almacenar datos de un avion
     int altitude;
     int longitude;
     int latitude;
-    double airSpeed;
 };
 
 typedef struct flightType Flight;
@@ -29,8 +28,8 @@ int main(void){
         scanf("%d", &aircraft[i].altitude);
         printf("Latitud: ");
         scanf("%d", &aircraft[i].latitude);
-        printf("Velocidad");
-        scanf("%lf", &aircraft[i].airSpeed);
+        printf("Longitud: ");
+        scanf("%d", &aircraft[i].longitude);
 
     }
     NearestNeighbor(aircraft);
@@ -42,7 +41,7 @@ double AirDistance(Flight *a, Flight *b){
     double d;
     d = sqrt(
         pow(a->altitude - b->altitude,2) +
-        powe(a->latitude - b->latitude,2) +
+        pow(a->latitude - b->latitude,2) +
         pow(a->longitude - b->longitude,2)
         //asignar valores a la estructura desde su direccion
         //a->altitude equivale a (*a).altitude; estamos modificando su valor
@@ -53,11 +52,11 @@ double AirDistance(Flight *a, Flight *b){
 void NearestNeighbor(Flight aircraft[]){
 
     for(int i = 0; i<total; i++){
-        double minD = 999999;
+        double minD = 999999;//distancia minima encontrada
         Flight *closest = NULL;//apunta al avion mas cercano
         for(int j= 0; j<total ; j++){
-            if(i =! j){
-                double d = AirDistance(&aircraft[1],&aircraft[j]);
+            if(i != j){
+                double d = AirDistance(&aircraft[i],&aircraft[j]);
                 if(d<minD){
                     minD = d;
                     closest = &aircraft[j];
@@ -65,6 +64,6 @@ void NearestNeighbor(Flight aircraft[]){
             }
         }
         printf("El avion mas cercano a %s es %s\n",
-        aircraft[i].ID, closest->ID);
+        aircraft[i].ID, closest->ID);//%s es para strings
     }
 }
