@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 struct flightType{
-    char ID[4];//un caracter adicional para el caracter nulo
+    char ID[4];//remember add a further caracter for \0
     int altitude;
     int longitude;
     int latitude;
@@ -16,7 +16,7 @@ Flight plane;
 
 int main(void){
 
-    //asignando valores
+    //asignning
     plane.ID[0] = '0';
     plane.ID[1] = 'A';
     plane.ID[2] = 'B';
@@ -37,29 +37,10 @@ int main(void){
 }
 
 /*
-Ya conocemos los tipos de datos basicos. Sin embargo, en muchos pro
-gramas es necesario representar objetos mas complejos, C permite
-representar esto mediante estructuras (struct)
+Sometimes it's needed to represent complex object. C gives a new tool
+called struct
 
-struct humano {
-    double peso;
-    double altura;
-    int edad;
-    //cada elemento dentro de la estructura se llama miembro
-}
-
-struct humano victor;
-al crear victor, este ocupa un bloque continuo de memoria que con
-tiene a todos sus miembros, en el run-time stack, los datos se
-almacenan uno despues de otro
-
-Para acceder a sus datos:
-    victor.peso = 58.00;
-    victor.altura = 1.69;
-    victor.edad = 25;
-
-typedef struct flighType Flight;
-//Esto permite crear un nombre mas simple Flight plane, esto no cam
-//bia la funcionalidad solo hace el codigo mas claro
+After creating a new structure you can access to it using a pointer
+to its first element
 
 */

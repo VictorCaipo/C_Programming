@@ -35,7 +35,8 @@ int string_leng(char string[]){//tell us how long the arrays is
     return index;
 }
 
-void char_swap(char *firstval, char *secondval){//cambia valores entre 2 caracteres
+void char_swap(char *firstval, char *secondval){
+    //change values between two characters
     char tempval;
     tempval = *firstval;
     *firstval = *secondval;

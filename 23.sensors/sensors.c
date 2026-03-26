@@ -1,8 +1,5 @@
 /*
-Sistema embebido que monitorea sensores:
-    No uses . dentro de funciones, solo ->
-    Usa & para pasar argumentos
-    Devuelve punteros correctamente
+An embedded system collects data from sensors:
 */
 #include <stdio.h>
 #include <string.h>
@@ -23,7 +20,7 @@ void printSensor(sensor_features *s);
 sensor_features* findCritical(sensor_features sensors[], int size);
 
 int main(void){
-    sensor_features sensors[total];//array de structuras
+    sensor_features sensors[total];//array of structures
     
     initSensor(&sensors[0], "S1", 50.0, 40.0);
     initSensor(&sensors[1], "S2", 30.0, 35.0);
@@ -52,13 +49,13 @@ void initSensor(sensor_features *s, char id_ini[], double value_ini, double thre
 }
 int isAlert(sensor_features *s){
     if(s->value > s->threshold){
-        return 1;//alerta
+        return 1;//alert
     } else{
         return 0;
     }
 }
 void printSensor(sensor_features *s){
-    int estado = isAlert(s);//ojo
+    int estado = isAlert(s);//
     if(estado){
         printf("Sensor: %s | Value: %f | Threshold: %f | ALERTA\n",
         s->id, s->value, s->threshold);
@@ -68,7 +65,7 @@ void printSensor(sensor_features *s){
     }
 }
 sensor_features* findCritical(sensor_features sensors[], int size){
-    //devuelve el sensor mas critico
+    //return the most critical sensor
     sensor_features *best;
     double sensor_states[size];
     double max_error; 
@@ -76,7 +73,7 @@ sensor_features* findCritical(sensor_features sensors[], int size){
     for(int ii = 0; ii < size ; ii++){
         sensor_states[ii] = sensors[ii].value - sensors[ii].threshold;
     }
-    //este array es inecesario talvez
+
     max_error = sensor_states[0];
     n_sensor = 0;
     for(int ii = 1; ii < size ; ii++){
@@ -85,8 +82,6 @@ sensor_features* findCritical(sensor_features sensors[], int size){
             n_sensor = ii;
         }
     }
-
     best = &sensors[n_sensor];
-    //asignando direccion del puntero a la estructura sensor a punteor best
     return best;
 }

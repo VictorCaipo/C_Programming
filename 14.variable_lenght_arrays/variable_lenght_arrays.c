@@ -4,11 +4,14 @@ Until now we have worked under the assumption that an array in C is of fixed siz
 This particular restriction proves to be quite limiting. Often we want to size
 our arrays based on the particular situation we've encontered during execution.
 Declaring varible-length array:
+
 int calculate(int len){
     int data(len);
 }
-la desventaja de este VLA es que el compilador no conoce el size en el tiempo de
-compilacion, esto produce menos optimizacion, riesgo de stack overflow y portabilidad
+
+The VLA disadvantage is that compiler doesn't recognize size at the
+same time of compilation, this produce less optimization, risk of
+overflow and portability
 */
 
 int main(void){

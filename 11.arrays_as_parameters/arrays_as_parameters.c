@@ -13,14 +13,12 @@ int main(void){
     for(int index = 0; index<max_num; index++ ){
         printf("Input number %d: ",index);
         scanf("%d", &numbers[index]);
-        //Podemos usar &number, pero solo para casos simples, tiene limites, por eso los punteros son necesarios
     }
 
     mean = average(numbers);
     /*
-    Cuando pasamos un array como argumento ocurre el arrays to pointer decay,
-    esto quiere decir que el array se convierte automaticamente en un puntero
-    a el primer elemento es decir:
+    When using an array as argument apears pointer decay. It means
+    the array become a pointer to the first element;
     numbers == &numbers[0]
     */
    
@@ -28,7 +26,8 @@ int main(void){
 
 }
 
-int average(int inputvalues[]){//inputvalues es el primer valor del stack frame de average y este apunta al primer termino de numbers (number[0])
+int average(int inputvalues[]){
+
     int sum = 0;
 
     for(int index = 0; index<max_num; index++){

@@ -3,7 +3,7 @@
 
 const int total = 3;
 
-struct flightType{//para almacenar datos de un avion
+struct flightType{//defining a new type of structure
     char ID[7];
     int altitude;
     int longitude;
@@ -12,14 +12,16 @@ struct flightType{//para almacenar datos de un avion
 
 typedef struct flightType Flight;
 
-double AirDistance(Flight *a, Flight *b);//argumento puntero a una estructura
-void NearestNeighbor(Flight aircraft[]);//argumento array de estructuras
+double AirDistance(Flight *a, Flight *b);
+//argument is an structure
+void NearestNeighbor(Flight aircraft[]);
+//argument is an array of structures
 
 
 int main(void){
-    Flight aircraft[total];//array de estructuras
+    Flight aircraft[total];//arrays of structures
 
-    //ingreso de datos
+    //initializing variables
     for(int i = 0; i<total ; i++){
         printf("\nAvion %d\n", i+1);
         printf("ID: ");
@@ -43,8 +45,8 @@ double AirDistance(Flight *a, Flight *b){
         pow(a->altitude - b->altitude,2) +
         pow(a->latitude - b->latitude,2) +
         pow(a->longitude - b->longitude,2)
-        //asignar valores a la estructura desde su direccion
-        //a->altitude equivale a (*a).altitude; estamos modificando su valor
+        //asigning values since an adress
+        //a->altitude means (*a).altitude
     );
     return d;
 }
@@ -52,8 +54,8 @@ double AirDistance(Flight *a, Flight *b){
 void NearestNeighbor(Flight aircraft[]){
 
     for(int i = 0; i<total; i++){
-        double minD = 999999;//distancia minima encontrada
-        Flight *closest = NULL;//apunta al avion mas cercano
+        double minD = 999999;//minimum distance founded
+        Flight *closest = NULL;//point to the nearest plane
         for(int j= 0; j<total ; j++){
             if(i != j){
                 double d = AirDistance(&aircraft[i],&aircraft[j]);
@@ -64,6 +66,6 @@ void NearestNeighbor(Flight aircraft[]){
             }
         }
         printf("El avion mas cercano a %s es %s\n",
-        aircraft[i].ID, closest->ID);//%s es para strings
+        aircraft[i].ID, closest->ID);//%s to print strings
     }
 }

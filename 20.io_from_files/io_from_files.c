@@ -1,12 +1,11 @@
 #include <stdio.h>
 /*Abriendo archivo:
-    fopen("nombre del archivo", "modo de uso")
-    modo de uso puede ser r (leer), w (reescribir) a (escribir
-    al final), r+ (leer y escribir)
+    fopen("file", "mode")
+    modes: r (read), w (rewrite) a (write ath the end), r+ (read and write)
 */
 int main(void){
 
-    FILE *infile; //puntero tipo FILE
+    FILE *infile; //pointer type FILE
     FILE *outfile;
     int ages[50];
     int suma = 0;
@@ -37,22 +36,15 @@ int main(void){
 }
 
 /*
-Cuando se trabaja con muchos datos no es practico pedir al usuario 
-los escriba en teclado, es mejor leer los datos desde un archivo y
-guardar resultados en otro archivo si es necesario.
+When working with so many data isn't practical to ask user for typing
+everydata. It's better to read data from a file and save them in another
+one if it's needed.
 
-En C esto se hace mediante streams(flujos) que estan conectados a
-archivos
+Known functions: scanf() y printf()
+More general functions: fscanf() y fprintf()
 
-Funciones conocidas: scanf() y printf()
-Funciones mas generales: fscanf() y fprintf()
-*/
-
- /*
-fscanf(puntero,"formato",variable donde se almacena) lee
-datos desde un archivo
-formato: %d, %f, %lf, %c, %s
-fscanf lee la cantidad de bytes almacenados en el archivo
-si encuentra un numero devuelve 1, si encuentra una letra
-devuelve 0 y si no efncuentra nada -1 (EOF)
+fscanf(file pointer,mode,variable)
+mode: %d, %f, %lf, %c, %s
+fscanf: read bytes saved in a file, if it find a number return 1, if it
+find a caracter return 0, if it find nothing return -1 EOF
 */

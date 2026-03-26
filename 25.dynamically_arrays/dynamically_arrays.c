@@ -7,41 +7,37 @@ int main(void){
     printf("Cuantos numeros quieres guardar? ");
     scanf("%d", &n);
 
-    //Reservamos memoria
-    int *arr = (int *) malloc(sizeof(int) *n);//puntero int
+    //allocate memory
+    int *arr = (int *) malloc(sizeof(int) *n);//int pointer
 
     if(arr == NULL){
         printf("Error al asignar memoria\n");
         return 1;
     }
 
-    //Leer datos
+    //read data
     for(int i=0; i<n ; i++){
         printf("Numero %d: ", i+1);
         scanf("%d", &arr[i]);
     }
 
-    //Mostrar datos
+    //print data
     printf("\nNumeros ingresados:\n");
     for(int i=0; i<n ; i++){
         printf("%d\n", *(arr + i));
     }
 
-    //Leer memoria
+    //free data
     free(arr);
 
     return 0;
 }
 
 /*
-Arrays de tamano dinamico:
-    En C se puede crear arreglos de tamano dinamico usando malloc (me
-    moria en el heap)
-    Se reserva memoria en bytes, devuelve un puntero void *, si falla
-    devuelve NULL.
-    La funcion sizeof es clave, permite que el codigo sea portable y
-    funcione en diferentes sistemas
-    Para liberar memoria usamos free()
-    Calloc y realloc son otras funciones utilies
-
+Dynamic memory array:
+    We can create using malloc function, which allocate memory in
+    the heap. It allocate bytes and return a void pointer, if it
+    doesn't work return a NULL pointer.
+    Sizeof is important because it allows code to be portable
+    Calloc y realloc are others handy functions
 */

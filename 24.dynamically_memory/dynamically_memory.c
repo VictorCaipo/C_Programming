@@ -1,39 +1,29 @@
-
 #include <stdio.h>
-#include <stdlib.h>//memoria dinamica
+#include <stdlib.h>//dynamic memory
 
-typedef struct{//datos de sensores
-    char id[10];//10 bytes (es una direccion de memoria)(char *)
-    double value;//8 bytes
-} sensor_data;//sensor
+typedef struct{
+    char id[10];
+    double value;
+} sensor_data;
 
 int main(void){
-    int n;//variable local vive en el stack
+    int n;
 
     printf("Cuantos sensores deseas registrar?: ");
     scanf("%d", &n);
 
     sensor_data *sensors = (sensor_data *) malloc(n*sizeof(sensor_data));
-    /*
-    malloc devuelve un puntero generico (void *, puntero que no 
-    tiene tipo) al convertir este puntero generico en uno de tipo
-    array de estructuras estos se definen uno por uno por medio del
-    compilador: por ejemplo en 2 sensores:
-    sensor 1 18 bytes y luego sensor 2 18 bytes, esto lo hacer automa
-    ticamente el compilador, ya que el es el encargado de dar sentido
-    a los punteros
-
-    */
+    //malloc return a generic pointer
 
     if (sensors == NULL){
-        printf("Error al asignar memoria\n");
+        printf("An error has happened\n");
         return 1;
     }
 
     for(int i=0; i<n; i++){
         printf("\nSensor %d\n", i+1);
         printf("ID: ");
-        scanf("%s", sensors[i].id);//id ya es un puntero
+        scanf("%s", sensors[i].id);//id is already a pointer
 
         printf("Valor: ");
         scanf("%lf", &sensors[i].value);
@@ -46,38 +36,33 @@ int main(void){
         sensors[i].id,
         sensors[i].value);
     }
-    //liberando memoria
     free(sensors);
-    //destruyendo los datos
+    //free memory
     return 0;
 }
 
 /*
-Los arrays tienen limitaciones, por lo que se introduce la memoria
-dinamica como solucion mas flexible.
+Arrays has boundaries. You can solve that using dinamic memory
 
-Problemas de usar arrays:
-    Debes definir el size desde el inicio
-    Si hay menos datos, desperdicias memoria
-    Si hay mas datos el programa falla
-    Insertar o eliminar elementos implica mover muchos datos
+Arrays constraints:
+    Define size from the begining
+    If you don't use every memory space, you will waste memory
+    Insert and eliminate elements imply to move so many data    
 
-Solucion: memoria dinamica:
-    Permite crear estructuras de datos que crecen o disminuyen segun
-    necesidad, son mas eficientes para insertar/eliminar elementos
+Solution Dinamic Memory:
+    It allows you to create data structures that grows and decay if you
+    are willing to.
 
-El programa usa 3 zonas principales de memoria en C:
+You can access 3 memory zones:
     Stack
     Data global
     Heap
-    *El heap crece hacia abajo, el stack crece hacia arriba, si se 
-    encuentrar ocurre error (overflow)
+    *El heap grows down, el stack grows up, if they meet overflow occurs
 
-En conclusion:
-    El stack es automatico y temporal (controlado por el CPU y compilador)
-    Heap es manuel y flexible, persistente (controlado por funciones)
+Conclusion:
+    Stack is automatic and temporary (controlled by CPU and compiler)
+    Heap es manual, flexible and persistent (controlled by functions)
 
-Fisicamente el stack, data global y heap se encuentran en la misma 
-memoria (RAM), la diferencia es como el sistema los organiza y gesti
-ona
+Stack, data global and heap live in the same physical memory, the
+difference between them is how OS manage them.
 */

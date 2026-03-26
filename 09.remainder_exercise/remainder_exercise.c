@@ -13,10 +13,7 @@ int main(int argc, char *argv[]){
     printf("Input dividend: ");
     scanf("%d", &dividend);
     /*
-    scanf: espera leer un valor decimal y lo guardara en la direccion
-    de la variable dividend, &dividend no es un puntero es una expresion
-    que contiene una direccion (es decir un valor) el puntero puede
-    almacenar varias direcciones
+    scanf(type of value to be read,place to save the value)
     */
     printf("Input divisor: ");
     scanf("%d", &divisor);
@@ -36,7 +33,10 @@ int int_divide(int x, int y, int *quoptr, int *remptr){
     if (y != 0){
         *quoptr = x/y;
         *remptr = x%y;
-        return 0;//esto puede simplificarse pero es una convencion usar return 0 para indicar que todo salio bien
+        return 0;
+        /*
+        it's a convention use 0 to indicate an error has appear
+        */
     } else{
         return -1;
     }
