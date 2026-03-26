@@ -1,6 +1,11 @@
 #include <stdio.h>
-//there isn't a boolean type, any integer that's 0 is false or otherwise it's true
+
+/*
+there isn't a boolean type, any integer that's 0 is false or otherwise
+it's true
+*/
 int main(int argc, char *argv[]){
+    
     int i = 0;
     if (argc == 1 ){
         printf("You only have one argument. You suck.\n");
@@ -9,8 +14,7 @@ int main(int argc, char *argv[]){
 
         for(i = 0; i < argc;i++){
             printf("%s ", argv[i]);
-        }
-        
+        } 
         printf("\n");
     } else {
         printf("You have too many arguments. You suck.\n");

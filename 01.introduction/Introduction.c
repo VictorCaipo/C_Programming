@@ -4,7 +4,7 @@
 /*The OS always run the main function*/
 int main(int argc, char *argv[]){
 
-    int distance = 1000;
+    int distance = 100000;
     printf("You are %d miles away.\n",distance);
     /*The prinf funciton can take multiple arguments*/
     return 0;
