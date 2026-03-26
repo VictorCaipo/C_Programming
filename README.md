@@ -1,7 +1,6 @@
 # C and Computing Systems
 **This is C basic and useful code. You will notice Computing Systems and C programming work hand in hand*
-0. Introduction
-1. Memorizing operators
+1. Introduction
 2. Variables and Types
 3. Conditionals
 4. While loop
