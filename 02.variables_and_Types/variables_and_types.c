@@ -1,18 +1,16 @@
 #include <stdio.h>
 
-int main(int argc, char* argv[]){
+int main(void){
 
-    int distance = 100; //%d
-    float power = 2.345f; //%f
-    double super_power = 5678.432;//%f
-    char initial = 'A';//%c
-    char first_name[] = "Zed";//%s
-    char last_name[] = "Shaw";//%s
-    long universe = 1L * 1024L;//%ld 
+    int number = 100; //%d
+    float accurate_number = 2.345f; //%f
+    double more_accurate_number = 5678.432;//%f
+    char word = 'A';//%c
+    char name[] = "Victor";//%s
+    long bigger = 1024L;//%ld 
+    char null_sign = '\0';//Null byte character
 
-    char nul_byte = '\0';//Null byte character
-
-    printf("The size of the universe is: %ld\n",universe);
+    printf("What's my favorite letter? It is %c\n", word);
     
     return 0;
 }
