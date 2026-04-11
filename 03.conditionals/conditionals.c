@@ -1,24 +1,26 @@
 #include <stdio.h>
 
-/*
-there isn't a boolean type, any integer that's 0 is false or otherwise
-it's true
-*/
-int main(int argc, char *argv[]){
+int main(void){
     
-    int i = 0;
-    if (argc == 1 ){
-        printf("You only have one argument. You suck.\n");
-    } else if (argc > 1 && argc < 4){
-        printf("Here's your arguments: \n");
+    int ii = 2;
+    
+    //if-else conditional
+    if ( ii >= 0 ){
 
-        for(i = 0; i < argc;i++){
-            printf("%s ", argv[i]);
-        } 
-        printf("\n");
+        printf("The number %d is positive\n", ii);
+    
     } else {
-        printf("You have too many arguments. You suck.\n");
+
+        printf("The number %d is negative\n", ii);
     }
+
+    //ternary operator condition ? value 1 : value 2
+    int jj = 2;
+
+    int result = (jj >= 0) ? 1 : -1;
+    
+    printf("Result: %d\n", result);
+
 
     return 0;
 }
