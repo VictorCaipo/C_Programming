@@ -1,5 +1,4 @@
 # C Programming
-- Programacion practica en C. Dominar los fundamentos es esencial si quieres resolver cualquier problema.
 
 1) Introduction
 2) Variables and Types
@@ -23,3 +22,5 @@
     - Structure and pointers
     - Structure containing pointers
 13) Dynamic memory
+
+> By: Victor Caipo
