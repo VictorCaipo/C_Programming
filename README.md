@@ -1,27 +1,25 @@
-# C and Computing Systems
-**This is C basic and useful code.*
-1. Introduction
-2. Variables and Types
-3. Conditionals
-4. While loop
-5. Size and Arrays
-6. Using functions
-7. Pointer declaration
-8. Pointer and functions
-9. Remainder (exercise)
-10. Arrays
-11. Arrays as parameters
-12. Strings
-13. Arrays and Pointers
-14. Variable Lenght Arrays
-15. Multidimensional Arrays
-16. Recursion
-17. Fibonacci numbers (exercise)
-18. Buffer input
-19. Buffer output
-20. I/O from Files
-21. Structures
-22. Array of Structures
-23. Sensors (exercise)
-24. Dynamically Memory
-25. Dynamically Arrays
+# C Programming
+- Programacion practica en C. Dominar los fundamentos es esencial si quieres resolver cualquier problema.
+
+1) Introduction
+2) Variables and Types
+3) Conditionals
+4) Loops
+5) Arrays
+    - Arrays declaration
+    - Arrays and pointers
+    - Arrays and functions
+6) Pointers
+    - Pointer declaration
+    - Pointer and functions
+7) Strings
+8) Recursion
+9) Buffer behavior
+10) I/0 from files
+11) Structures
+    - Structure declaration
+    - Structure in stack
+    - Array of structures
+    - Structure and pointers
+    - Structure containing pointers
+13) Dynamic memory
