@@ -11,16 +11,17 @@
 6) Pointers
     - Pointer declaration
     - Pointer and functions
+    - Pointers to pointers
 7) Strings
 8) Recursion
 9) Buffer behavior
-10) I/0 from files
-11) Structures
+10) Structures
     - Structure declaration
     - Structure in stack
     - Array of structures
     - Structure and pointers
     - Structure containing pointers
-13) Dynamic memory
+11) Dynamic memory
+12) Linked lists
 
 > By: Victor Caipo
