@@ -25,4 +25,3 @@
     - Structure as arguments
 11) Dynamic memory
 
-> By: Victor Caipo
