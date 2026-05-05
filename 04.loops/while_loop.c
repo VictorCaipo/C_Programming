@@ -1,8 +1,10 @@
 #include <stdio.h>
 
-int main(int argc, char *argv[]){
+int main(void){
     
     int i = 0;
+
+    printf("Imprimiendo numeros del 0 al 24\n");
     while (i<25){
         printf("%d\n",i);
         i++;
